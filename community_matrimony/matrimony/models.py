@@ -29,7 +29,7 @@ class Kula_osa(models.Model):
         return self.kula_name
 
 
-class Appuser(models.Model):
+class Appusr(models.Model):
 
     # user registration details.
     user_type= models.CharField(max_length= 30)
@@ -64,9 +64,9 @@ class groom_bride_details(models.Model):
     occupation= models.CharField(max_length= 40)
     Father_name = models.CharField(max_length=40)
     mother_name = models.CharField( max_length=40)
-    profile_pic = models.ImageField(upload_to = user_directory_path)
+    profile_pic = models.ImageField(upload_to = 'documents/')
     created_date_time = models.DateTimeField(auto_now_add=True) 
-    appuser = models.ForeignKey('Appuser', on_delete=models.CASCADE)
+    appusr = models.ForeignKey('Appusr', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.name
